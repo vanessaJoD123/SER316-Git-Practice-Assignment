@@ -58,5 +58,16 @@ Learning Summary:
     
 • What you observed in the git history for feature1 vs feature2 vs feature3
 
-    
+    feature1: 
+        I updated feature1 from dev using a merge, resolved conflicts, tested the project, then merged feature1 into dev. In history, this workflow preserved branch context and created merge history that shows where changes came from. After merging, I deleted feature1 to keep the repo clean.
+
+    feature2:
+        I rebased feature2 onto dev to keep the history linear, resolving conflicts during the rebase. Later, when dev changed again, I merged dev into feature2 and merged back.
+        In history, the feature commits appear in a mostly straight line (rebasing rewrote commit hashes), and the branch shows evidence of conflict resolution and syncing with dev.
+
+    feature3:
+        I squashed the 4 messy feature3 commits into one clean commit, then rebased that single commit onto dev and merged it into dev (fast-forward), keeping feature3 for reference. In history, instead of multiple small commits, dev contains one clear “hint system” commit from feature3, demonstrating how squashing makes history cleaner.
+
 • When you would use each strategy in real projects
+
+    I'd use merge when I'm working on a feature or branch and want to bring in what we currently have in dev to the branch I'm working on. I'd also use it when I want to merge my work back into dev. I'd use squash when I don't want multiple small commits and would rather have one clean commit or if I want to make it easier to rebase. I'd use rebase only when I'm working alone on a branch and I want the history to look cleaner and linear. Finally, I'd use cherry-pick when there is a small bug in my working main and it needs to be fixed quickly with just one commit. I wouldn't rebase onto a shared branch like dev since this might cause issues.
