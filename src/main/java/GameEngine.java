@@ -49,6 +49,8 @@ public class GameEngine {
             }
             result.setRemainingAttempts(remaining);
         }
+        return result;
+    }
 
     public void reset() {
         target = Utils.randomInt(min, max);
