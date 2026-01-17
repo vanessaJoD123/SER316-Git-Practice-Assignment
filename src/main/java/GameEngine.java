@@ -48,6 +48,7 @@ public class GameEngine {
                 result = new GuessResult(false, "Too high!", attempts);
             }
             result.setRemainingAttempts(remaining);
+            result.setHint(hint);
             return result;
         }
         
